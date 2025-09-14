@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --background: #ffffff; */
+  --background: #130511;
+  --foreground: #fff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #0a0a0a; */
+    --background: #130511;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "CoFo";
+  src: url("/fonts/CoFo Sans Pixel.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jersey25Regular";
+  src: url("/fonts/Jersey25-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  color: var(--foreground);
+  font-family: "Jersey25Regular";
+  /* font-family: 'Montserrat'; */
+  background: url("/images/home/Rectangle.png") no-repeat center/cover fixed,
+    var(--background);
+
+  /* 确保内容高度撑满视口 */
+  min-height: 100vh;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.sunburst {
+  background: repeating-conic-gradient(
+    from 0deg,
+    #170f16 0deg 10deg,
+    /* 调整角度使射线更密集 */ transparent 10deg 20deg
+  );
+}
+
+.animate-spin {
+  animation: rotate 30s linear infinite;
+  will-change: transform;
+}
+
+/* 可选：悬停时减慢动画 */
+/* .animate-spin:hover {
+  animation-duration: 120s;
+} */
+
+/* 可以添加暂停动画的类 */
+.rotate-animation-paused {
+  animation-play-state: paused;
+}
+
+/* 可以添加悬停时减慢动画的类 */
+.rotate-animation-hover:hover {
+  animation-duration: 120s;
+}
+
+.shadow-text {
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
+}
+/* 
+.custom-cursor {
+  cursor: url("/cursors/cursor.svg") 0 0, auto !important;
+}
+.custom-cursor:active {
+  cursor: url("/cursors/cursor_active.svg") 0 0, auto !important;
+}
+html,
+body,
+* {
+  cursor: url("/cursors/cursor.svg") 0 0, auto !important;
+}
+*:active {
+  cursor: url("/cursors/cursor_active.svg") 0 0, auto !important;
+}
+:root,
+* {
+  cursor: url("/cursors/cursor.svg") 0 0, auto !important;
+}
+:root,
+* {
+  cursor: url("/cursors/cursor.svg") 0 0, auto !important;
+} */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #fcd845 #1a0d1a;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #1a0d1a;
+  border-radius: 3px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #fcd845;
+  border-radius: 3px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e6c33c;
+}
+
+.bg-stripe-pink {
+  background-image: repeating-linear-gradient(
+    to right,
+    #ff8df7 0px,
+    #ff8df7 6px,
+    #ffffff33 6px,
+    #ffffff33 8px
+  );
+}
+
+.custom-thumb {
+  position: relative;
+  /* visibility: hidden; */
+  background: transparent;
+  border: none !important;
+  overflow: auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.custom-thumb::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 15px !important;
+  height: 19px !important;
+  background: url("/images/create/slider.svg") !important;
+  background-color: transparent;
+  border-radius: 0 !important;
+  background-size: cover !important;
+}
+.custom-thumb::before {
+  content: null;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: none !important;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 富文本内容样式 */
+.rich-text-content {
+  @apply text-sm font-cofo text-[#9F9B9F] leading-normal;
+}
+
+.rich-text-content h1 {
+  @apply text-lg font-bold font-jersey25Regular text-white mt-4 mb-2;
+}
+
+.rich-text-content h1 span {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h1 span em {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h1 span strong {
+  @apply text-lg !font-bold !font-jersey25Regular;
+}
+
+.rich-text-content h2 {
+  @apply text-lg !font-bold !font-jersey25Regular text-white mt-3 mb-2;
+}
+.rich-text-content h2 span {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h2 span em {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h2 span strong {
+  @apply text-lg !font-bold !font-jersey25Regular;
+}
+.rich-text-content h3 {
+  @apply text-lg !font-bold !font-jersey25Regular text-white mt-2 mb-1;
+}
+.rich-text-content h3 span {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h3 span em {
+  @apply text-lg !font-bold !font-jersey25Regular text-white;
+}
+.rich-text-content h3 span strong {
+  @apply text-lg !font-bold !font-jersey25Regular;
+}
+
+.rich-text-content p {
+  @apply mb-2 font-cofo;
+}
+
+.rich-text-content ol {
+  @apply list-decimal font-cofo list-inside ml-4 mb-2;
+}
+
+.rich-text-content ul {
+  @apply list-disc font-cofo list-inside ml-4 mb-2;
+}
+
+.rich-text-content li {
+  @apply mb-1 font-cofo;
+}
+
+.rich-text-content strong {
+  @apply font-bold font-cofo text-white;
+}
+
+.rich-text-content em {
+  @apply italic;
+}
+
+.rich-text-content hr {
+  @apply border-t border-[#332231] my-4;
+}
+
+.rich-text-content blockquote {
+  @apply border-l-4 border-[#332231] pl-4 italic;
+}

@@ -1,0 +1,699 @@
+{
+  "Home": {
+    "chefPeterAlt": "Chef Peter",
+    "tokenAvatar": "Avatar for {name}",
+    "hotToken": {
+      "title": "Hot Token",
+      "hotLabel": "HOT",
+      "marketCap": "Market Cap",
+      "volume24h": "24 Hour Volume",
+      "volumeAllTime": "All-Time Volume",
+      "na": "N/A",
+      "insurance": {
+        "reserved": "Insurance Reserved",
+        "expireIn": "expire in",
+        "details": "{sol} SOL / ≈${usd} / MC: ${marketCap}",
+        "countdownUnits": {
+          "days": "d",
+          "hours": "h",
+          "minutes": "m",
+          "seconds": "s"
+        }
+      },
+      "accessibility": {
+        "tokenImage": "Logo of {name} token",
+        "tokenItem": "Token {name} with price {price} and address {address}",
+        "insuranceButton": "Insurance countdown timer",
+        "section": "Hot token section displaying featured token details",
+        "avatar": "Avatar for {name}",
+        "copyButton": "Copy token address to clipboard",
+        "chefPeter": "Chef Peter illustration"
+      },
+      "holderCount": "Holder count",
+      "createdBy": "Created by",
+      "fallbackName": "Unknown token",
+      "fallbackAddress": "No address",
+      "fallbackSymbol": "N/A",
+      "fallbackMarketCap": "N/A",
+      "fallbackHolders": "N/A",
+      "fallbackSigner": "Unknown",
+      "fallbackCreatedAt": "N/A"
+    },
+    "history": {
+      "title": "Recent Transactions",
+      "plateAlt": "Decorative plate",
+      "operations": {
+        "buy": "Buy",
+        "sell": "Sell"
+      },
+      "accessibility": {
+        "carousel": "Recent token transactions",
+        "tokenAvatar": "Avatar of {name} token"
+      }
+    },
+    "tokenList": {
+      "searchPlaceholder": "Search by token name, symbol, or pool address",
+      "graduated": "Graduated",
+      "sort": {
+        "createdAt": "Sort: Created At",
+        "marketCap": "Sort: Market Cap"
+      },
+      "insurance": {
+        "reserved": "Insurance Reserved",
+        "statusTooltip": "Insurance Status: {status}"
+      },
+      "social": {
+        "twitter": "X/Twitter",
+        "telegram": "Telegram",
+        "discord": "Discord",
+        "website": "Website"
+      },
+      "bonding": "Bonding",
+      "noTokens": "No tokens found",
+      "accessibility": {
+        "searchInput": "Search tokens",
+        "tokenCard": "Token card for {name}",
+        "progressBar": "Bonding progress for {name}",
+        "tokenAvatar": "Avatar of {name} token"
+      }
+    }
+  },
+  "Header": {
+    "logoAlt": "Platform Logo",
+    "navigation": {
+      "explore": "Explore",
+      "michelin": "Michelin",
+      "referral": "Referral",
+      "lossKing": "Loss King Competition",
+      "airdrop": "Airdrop"
+    },
+    "accessibility": {
+      "menuButton": "Open navigation menu",
+      "navigationMenu": "Main navigation menu",
+      "currentPage": "Current page"
+    }
+  },
+  "CreateTokenModal": {
+    "openButton": "Create Meme Coin",
+    "title": "Cook a new Token",
+    "form": {
+      "tickerPlaceholder": "Ticker",
+      "namePlaceholder": "Coin name",
+      "descriptionPlaceholder": "Description",
+      "socials": "Add socials (Optional)",
+      "socialPlaceholder": "Please input",
+      "initialBuy": "Initial Buy (Optional)",
+      "buyAmount": "Amount of tokens to buy",
+      "buyPost": "Buy post",
+      "insurance": "Price Insurance (Optional)",
+      "insuranceDescription": "If you fail to go online within 7 days, you get a full refund of purchased tokens. If online, you can claim the price difference if the price falls below the protected price.",
+      "insurancePrice": "Insurance Price",
+      "currentSetting": "Current setting: {value} SOL",
+      "protectedSetting": "Protected setting: {value} SOL",
+      "confirm": "Confirm"
+    },
+    "socials": {
+      "twitter": "X/Twitter",
+      "telegram": "Telegram",
+      "discord": "Discord"
+    },
+    "toasts": {
+      "error": {
+        "title": "Error",
+        "nameInvalid": "Token name must be at least 3 characters",
+        "symbolInvalid": "Token symbol must be at least 2 characters",
+        "failed": "Token creation failed, please try again",
+        "tickerByteLength": "The byte length of the token name is {byteLength}, which must be between 3 and 10 bytes"
+      },
+      "processing": {
+        "title": "Processing",
+        "description": "Creating token..."
+      },
+      "success": {
+        "title": "Success",
+        "descriptions": "Token {name} ({symbol}) created successfully!"
+      }
+    },
+    "accessibility": {
+      "modal": "Create new token modal",
+      "tickerInput": "Token ticker input",
+      "nameInput": "Token name input",
+      "descriptionInput": "Token description input",
+      "socialInput": "{platform} URL input",
+      "initialBuyButton": "Select {value}% initial buy",
+      "currentPriceSlider": "Current price adjustment",
+      "protectedPriceSlider": "Protected price adjustment",
+      "confirmButton": "Confirm token creation"
+    }
+  },
+  "MyInsuranceModal": {
+    "openButton": "Insurance",
+    "title": "Hi, do you need insurance?",
+    "description": "If the launch is unsuccessful within {days} days, you can get back 100% of the insurance money. If the graduation launch is successful within {days} days, the insurance money can be returned according to the price range you set.",
+    "formPlaceholder": "Insurance Form",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "whatIsInsurance": {
+          "title": "What is insurance money?",
+          "content": "Insurance money is a deposit you pay to protect your investment. If the token launch fails, you can reclaim it fully. If successful, you may receive a partial refund based on the price performance."
+        },
+        "howItWorks": {
+          "title": "How does insurance work?",
+          "content": "You set a price range for the insurance. If the token price falls below this range after a successful launch, you can claim the difference. If the launch fails, you get a full refund."
+        },
+        "howToRedeem": {
+          "title": "How do I redeem my insurance money?",
+          "content": "To redeem, go to Personal Center > My Created Coins and click 'Withdraw.' Ensure you read the insurance instructions carefully before confirming redemption."
+        }
+      }
+    },
+    "accessibility": {
+      "modal": "Insurance information modal",
+      "openButton": "Open insurance modal",
+      "faqSection": "Frequently asked questions about insurance",
+      "faqItem": "{title} accordion item"
+    }
+  },
+  "SolanaWallet": {
+    "connect": "Connect",
+    "signUp": "Sign In",
+    "loading": "Loading...",
+    "unknown": "Unknown",
+    "menu": {
+      "myAssets": "My Assets",
+      "disconnect": "Disconnect"
+    },
+    "toasts": {
+      "loginFailed": {
+        "title": "Login Failed",
+        "description": "Please try again later"
+      },
+      "logoutSuccess": {
+        "title": "Logout Successful",
+        "description": "See you next time!"
+      },
+      "logoutFailed": {
+        "title": "Logout Failed",
+        "description": "Please try again"
+      }
+    },
+    "accessibility": {
+      "connectButton": "Connect or sign in to wallet",
+      "walletMenu": "Wallet actions menu",
+      "addressButton": "Open wallet actions menu"
+    }
+  },
+  "Task": {
+    "myPoints": "My Points",
+    "done": "Done",
+    "go": "Go",
+    "noTasks": "No tasks available",
+    "loadMore": "Load More",
+    "noMore": "No more tasks",
+    "toasts": {
+      "getFailed": {
+        "title": "Failed",
+        "loginFirst": "Please log in first",
+        "getTaskListFailed": "Failed to get task list",
+        "getPointsFailed": "Failed to get points"
+      },
+      "startTaskFailed": {
+        "title": "Task Failed",
+        "pleaseLoginFirst": "Please log in first",
+        "tryAgainLater": "Please try again later"
+      },
+      "taskStarted": {
+        "title": "Task Started",
+        "description": "Good luck!"
+      }
+    },
+    "accessibility": {
+      "popover": "Task list",
+      "triggerButton": "Open task list (Points: {points})",
+      "taskButton": "{action} task {title}",
+      "loadMoreButton": "Load more tasks",
+      "taskItem": "Task: {title}"
+    },
+    "images": {
+      "taskIcon": "Task icon"
+    }
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "noData": "No Data",
+    "cancel": "Cancel",
+    "viewMore": "View More",
+    "time": {
+      "future": "In the future",
+      "justNow": "Just now",
+      "fewSeconds": "A few seconds ago",
+      "underMinute": "Less than a minute ago",
+      "units": {
+        "minute": "{count}M{count, plural, one {} other {}} AGO",
+        "hour": "{count}H{count, plural, one {} other {}} AGO",
+        "day": "{count}D{count, plural, one {} other {}} AGO",
+        "month": "{count}Mo{count, plural, one {} other {}} AGO",
+        "year": "{count}Y{count, plural, one {} other {}} AGO"
+      }
+    },
+    "trade": {
+      "switchTo": "Switch to",
+      "normalMode": "Switch to Normal",
+      "rektismMode": "Switch to REKTISM",
+      "setSlippage": "Set Max Slippage",
+      "placeTrade": "Place Trade",
+      "loginToTrade": "Login to Trade",
+      "connectWallet": "Connect Wallet",
+      "amountPlaceholder": "0.00",
+      "solCurrency": "SOL",
+      "reset": "Reset",
+      "max": "Max",
+      "tokenCurrency": "Token",
+      "balance": "Balance",
+      "estimatedOutput": "Estimated Output",
+      "amountOptions": {
+        "point1": "0.1",
+        "point5": "0.5",
+        "max": "1",
+        "one": "1"
+      },
+      "percentageOptions": {
+        "quarter": "25%",
+        "half": "50%",
+        "threequarters": "75%"
+      }
+    },
+    "images": {
+      "tokenIcon": "Token icon",
+      "solIcon": "SOL icon",
+      "lossKing": "Loss King Competition image",
+      "taskIcon": "Task icon"
+    },
+    "toasts": {
+      "error": {
+        "fetchBalanceFailed": "Failed to fetch balance, please try again",
+        "invalidTokenAddress": "Invalid token address, please ensure it's a Solana token address",
+        "tradeFailed": "Trade failed: {message}",
+        "invalidAmount": "Please enter a valid amount",
+        "postFailed": "Failed to post",
+        "emptyComment": "Comment cannot be empty",
+        "imageUploadFailed": "Failed to upload image",
+        "genericError": "Something went wrong",
+        "fetchFailed": "Failed to fetch holders",
+        "likeFailed": "Failed to like comment",
+        "unlikeFailed": "Failed to unlike comment",
+        "fetchUserError": "Failed to fetch user info",
+        "fetchTokenError": "Failed to fetch tokens",
+        "noAddress": "No user address available",
+        "updateError": "Failed to update profile",
+        "fetchReferralInfo": "Failed to fetch referral info",
+        "fetchReferralCode": "Failed to fetch referral code",
+        "codeNotLoaded": "Referral code not loaded",
+        "networkError": "Network error, please try again later",
+        "insufficientBalance": "Insufficient balance",
+        "loginFailed": "Login failed",
+        "unknownError": "An unknown error occurred, please try again later",
+        "noRoute": "No trading route available, please adjust amount or token",
+        "fetchBalanceFailedDesc": "Unable to retrieve balance, please try again later",
+        "noRouteDesc": "No trading route available, please adjust the amount or token",
+        "invalidAmountDesc": "Please enter a valid amount greater than 0",
+        "invalidTokenAddressDesc": "The provided token address is not a valid Solana token address",
+        "loginFailedDesc": "Login attempt failed, please try again",
+        "tradeFailedDesc": "Trade could not be completed: {message}",
+        "unknownErrorDesc": "An unexpected error occurred, please try again later",
+        "fetchReferralInfoDesc": "Unable to retrieve referral information, please try again later",
+        "fetchReferralCodeDesc": "Unable to retrieve your referral code, please try again later",
+        "networkErrorDesc": "A network error occurred, please check your connection and try again",
+        "codeNotLoadedDesc": "The referral code is not available yet, please try again",
+        "copyFailed": "Copy Failed",
+        "copyFailedDesc": "Failed to copy token address"
+      },
+      "warning": {
+        "connectWallet": "Please connect your wallet first",
+        "loginRequired": "Please login first",
+        "pleaseConnect": "Please connect wallet first"
+      },
+      "success": {
+        "tradeSuccess": "Trade successful! Transaction ID: {txId}",
+        "postSuccess": "Posted successfully",
+        "commentPosted": "Your comment has been posted",
+        "likeSuccess": "Liked successfully",
+        "liked": "You liked the comment",
+        "unlikeSuccess": "Unliked successfully",
+        "unliked": "You unliked the comment",
+        "updateSuccess": "Profile updated successfully",
+        "linkCopied": "Link Copied",
+        "linkCopiedDesc": "Invite link copied to clipboard: {code}",
+        "shareX": "Share to X",
+        "shareXDesc": "Redirecting to X to post...",
+        "taskCompleted": "Task Completed",
+        "taskCompletedDesc": "You have completed task: {title}",
+        "telegramBindInstruction": "Please send the {code} to the robot for binding.{code} has been copied to the clipboard",
+        "copied": "Copied",
+        "copiedDesc": "Token address copied to clipboard"
+      },
+      "info": {
+        "slippageSet": "Slippage set to {slippage}%",
+        "modeSwitched": "Switched to {mode} mode",
+        "processing": "Processing",
+        "processingTrade": "Processing trade..."
+      }
+    },
+    "financial": {
+      "currency": "$",
+      "sol": "SOL",
+      "usd": "USD",
+      "types": {
+        "balance": "Balance",
+        "duration": "Duration",
+        "gain": "Gain",
+        "loss": "Loss"
+      }
+    },
+    "number": {
+      "units": {
+        "thousand": "k",
+        "million": "M",
+        "billion": "B",
+        "trillion": "T",
+        "quadrillion": "P",
+        "quintillion": "E"
+      },
+      "scientificPlaceholder": "0.0{N}"
+    },
+    "accessibility": {
+      "heroImage": "Illustration of Chef Peter in the hero section",
+      "amountInput": "Amount input for trade",
+      "amountButton": "Select amount {value}",
+      "tradeButton": "Execute trade",
+      "modeToggle": "Toggle trade mode",
+      "slippageButton": "Set maximum slippage"
+    }
+  },
+  "Detail": {
+    "threadTab": "Thread",
+    "transactionsTab": "Transactions",
+    "buyTab": "Buy",
+    "sellTab": "Sell",
+    "bondingLabel": "Bonding",
+    "bondingValue": "8.93%",
+    "insurance": {
+      "reservedLabel": "Insurance Reserved",
+      "details": "{sol} SOL / ≈${usd} / MC: ${marketCap}",
+      "expireIn": "expire in",
+      "countdown": "03d : 12h : 14m : 32s",
+      "contractLink": "Insurance lock-up contract >"
+    },
+    "thread": {
+      "postReply": "Post Reply",
+      "addComment": "Add Comment",
+      "commentPlaceholder": "What's on your mind?",
+      "sort": "Sort",
+      "asc": "Oldest",
+      "desc": "Newest",
+      "noComments": "No comments yet"
+    },
+    "holders": {
+      "title": "Holder Distribution",
+      "total": "{count} holders",
+      "noData": "No Data"
+    },
+    "accessibility": {
+      "tradeTabs": "Select Buy or Sell",
+      "switchUnit": "Switch between SOL and token units",
+      "threadTransactionsTabs": "Select Thread or Transactions",
+      "bondingProgress": "Bonding progress",
+      "insuranceButton": "Insurance countdown timer",
+      "replyModal": "Open reply modal",
+      "submitComment": "Submit comment",
+      "commentInput": "Comment input",
+      "uploadImage": "Upload image",
+      "removeImage": "Remove uploaded image",
+      "sortButton": "Sort comments by {order}",
+      "likeButton": "{action} comment",
+      "commentAvatar": "Avatar of {name}",
+      "commentImage": "Image in comment",
+      "commentItem": "Comment by {name}",
+      "holderCard": "Token holder distribution",
+      "holderItem": "Holder {address} with {percentage}",
+      "noData": "No token holders available",
+      "modeToggle": "Toggle trading mode",
+      "slippageButton": "Set slippage",
+      "amountInput": "Trade amount input",
+      "amountButton": "Select amount: {value}",
+      "tradeButton": "Place trade"
+    },
+    "error": {
+      "tokenNotFound": "Token not found",
+      "fetchTokenFailed": "Failed to fetch token details"
+    }
+  },
+  "Assets": {
+    "tokenOwned": "Token Owned",
+    "owned": "Owned",
+    "created": "Created",
+    "token": "Token",
+    "marketCap": "Market Cap",
+    "tokenPrice": "Token Price",
+    "tokenStatus": "Token Status",
+    "balance": "Balance",
+    "createdAt": "Created At",
+    "profile": {
+      "noAddress": "No Address",
+      "tokenOwned": "Token Owned",
+      "noBio": "No Bio",
+      "connectX": "Connect X",
+      "connectTG": "Connect Telegram",
+      "connectTradingBot": "Connect TradingBot",
+      "connectXTitle": "Connect X",
+      "connectXDescription": "Please connect your X account.",
+      "connectXButton": "Connect",
+      "connectTGTitle": "Connect Telegram",
+      "connectTGDescription": "Please connect your Telegram account.",
+      "connectTGButton": "Connect",
+      "connectTradingBotTitle": "Connect TradingBot",
+      "connectTradingBotDescription": "Please connect your TradingBot.",
+      "connectTradingBotButton": "Connect",
+      "editProfile": "Edit Profile",
+      "name": "Name",
+      "bio": "Bio",
+      "saveChanges": "Save Changes"
+    },
+    "accessibility": {
+      "page": "User assets page",
+      "profileCard": "User profile card",
+      "avatar": "User avatar for {name}",
+      "editProfile": "Edit user profile",
+      "connectButton": "Connect to {platform}",
+      "tokenTable": "Table of user tokens",
+      "tabs": "Switch between owned and created tokens",
+      "tokenRow": "Token {name} with symbol {symbol}",
+      "pagination": "Pagination for token list",
+      "editProfileModal": "Edit profile modal",
+      "nameInput": "Input for user name",
+      "bioInput": "Input for user bio",
+      "uploadImage": "Upload user avatar",
+      "cancelButton": "Cancel profile changes",
+      "saveButton": "Save profile changes",
+      "othersProfileCard": "Other user's profile card",
+      "viewTwitter": "View Twitter profile",
+      "viewTelegram": "View Telegram profile"
+    }
+  },
+  "Michelin": {
+    "title": "MICHELIN TOKEN",
+    "ranking": "Ranking/Token Name/Symbol",
+    "marketCap": "Market Cap",
+    "tradingVolume": "Trading Volume",
+    "accessibility": {
+      "page": "Airdrop page with token leaderboard",
+      "leaderboard": "Leaderboard of top tokens",
+      "rankItem": "Rank {rank}: {name} with market cap {marketCap} and trading volume {tradingVolume}",
+      "tokenIcon": "Icon for {name} token",
+      "rankNumber": "Rank number {rank}",
+      "tokenAvatar": "Token avatar for {name}",
+      "sortMarketCap": "Sort by market cap in {direction} order",
+      "sortTradingVolume": "Sort by trading volume in {direction} order"
+    },
+    "error": {
+      "fetchTokensFailed": "Failed to fetch token list",
+      "networkError": "Network error, please try again later"
+    },
+    "sort": {
+      "asc": "ascending",
+      "desc": "descending"
+    }
+  },
+  "AirdropReferral": {
+    "title1": "Invite friends to boost your",
+    "title2": "$COOK Airdrop Rewards!",
+    "yourCode": "Your referral code:",
+    "copyLink": "Copy Invite Link",
+    "shareX": "Share to X",
+    "totalReferrals": "Total Referrals",
+    "totalVolume": "Total Referral Trading Volume",
+    "shareText": "Join the $COOK airdrop! Use my referral code {code} to earn rewards! {link}",
+    "accessibility": {
+      "page": "Referral rewards page for $COOK airdrop",
+      "hero": "Hero section promoting referral rewards",
+      "referralCode": "Your referral code for inviting friends",
+      "copyButton": "Copy referral link to clipboard",
+      "shareButton": "Share referral link on X",
+      "referralsCard": "Total number of referrals",
+      "volumeCard": "Total trading volume from referrals in SOL",
+      "solIcon": "Solana cryptocurrency icon"
+    }
+  },
+  "LosskingCompetition": {
+    "title": "Overcooked",
+    "subtitle": "even michelin chef will overcook something",
+    "netProfitLoss": "TOTAL NET PROFIT/LOSS",
+    "share": "Share",
+    "wallet": "Wallet",
+    "wallets": {
+      "mainWallet": "Main Wallet",
+      "gmnBot": "GMGN Bot",
+      "bullxBot": "BullX Bot",
+      "notConnected": "(not yet connected)"
+    },
+    "shareText": "Join the $COOK airdrop! Use my referral code {code} to earn rewards! {link}",
+    "accessibility": {
+      "page": "Loss King Competition page showcasing wallet losses",
+      "hero": "Hero section with competition details and net profit/loss",
+      "netProfitLoss": "Total net profit or loss in SOL",
+      "shareButton": "Share competition results on X",
+      "walletList": "List of wallets with their losses",
+      "walletItem": "Wallet {name} with address {address} and loss {loss} SOL",
+      "competitionImage": "Illustration for Loss King Competition"
+    }
+  },
+  "Airdrop": {
+    "title": "$COOK AIRDROP S1",
+    "endsIn": "Ends in:",
+    "time": {
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds"
+    },
+    "myPoints": "My Points:",
+    "tasksTitle": "How to earn more points?",
+    "tasks": {
+      "tradeToken": {
+        "title": "Trade Token",
+        "description": "Trade token on Cooking"
+      },
+      "createToken": {
+        "title": "Create Token",
+        "description": "Create token on Cooking"
+      },
+      "referFriends": {
+        "title": "Refer Friends",
+        "description": ""
+      },
+      "completeProfile": {
+        "title": "Complete Profile",
+        "description": ""
+      },
+      "overcooked": {
+        "title": "Overcooked",
+        "description": "Showcase how much you can"
+      }
+    },
+    "taskButton": {
+      "goComplete": "Go Complete",
+      "completed": "Completed"
+    },
+    "accessibility": {
+      "page": "Airdrop page for $COOK S1 with tasks and countdown",
+      "hero": "Hero section with airdrop title and countdown timer",
+      "points": "Your current points in the airdrop",
+      "taskList": "List of tasks to earn points",
+      "taskItem": "Task {title} worth {points} points",
+      "taskButton": "{action} task {title}",
+      "taskIcon": "Icon for task points"
+    }
+  },
+  "TokenList": {
+    "accessibility": {
+      "searchInput": "Search input for tokens",
+      "sortSelect": "Sort select",
+      "sortDirectionSelect": "Sort direction select",
+      "listViewButton": "Switch to list view",
+      "cardViewButton": "Switch to card view",
+      "tokenCard": "Token card for {name}",
+      "avatar": "Avatar for {name}",
+      "progressBar": "Bonding curve progress for {name}",
+      "table": "Token list table"
+    },
+    "searchPlaceholder": "Search by Token Name, Symbol or Address",
+    "graduated": "Graduated",
+    "insurance": "Insurance",
+    "sortOptions": {
+      "marketCap": "Market Cap",
+      "tokenPrice": "Token Price",
+      "h24Chg": "24h Change",
+      "h24Vol": "24h Volume",
+      "holders": "Holders",
+      "replies": "Replies",
+      "tokenStatus": "Token Status",
+      "insuranceStatus": "Insurance Status",
+      "createdAt": "Created At"
+    },
+    "sortDirections": {
+      "asc": "Ascending",
+      "desc": "Descending"
+    },
+    "tableHeaders": {
+      "token": "Token",
+      "marketCap": "Market Cap",
+      "tokenPrice": "Token Price",
+      "h24Chg": "24h Change",
+      "h24Vol": "24h Volume",
+      "holders": "Holders",
+      "replies": "Replies",
+      "tokenStatus": "Token Status",
+      "insuranceStatus": "Insurance Status",
+      "createdAt": "Created At"
+    },
+    "tokenStatus": {
+      "graduated": "Graduated",
+      "bondingCurve": "Bonding Curve"
+    },
+    "card": {
+      "reserved": "Reserved",
+      "createdBy": "created by",
+      "noTokensFound": "No tokens found"
+    },
+    "tooltip": {
+      "twitter": "Twitter",
+      "telegram": "Telegram",
+      "discord": "Discord",
+      "website": "Website",
+      "insuranceStatus": "Insurance status: {status}",
+      "tokenAddress": "Token Address:",
+      "marketCap": "Market Cap:",
+      "holderCount": "Holder count:",
+      "replyCount": "Reply Count:",
+      "tokenSymbol": "Token Symbol:",
+      "insurance": "Insurance",
+      "status": "Status:",
+      "expireIn": "expire in:",
+      "protectedRange": "Protected Range:",
+      "amount": "Amount:",
+      "insuranceLockupContract": "Insurance lock-up contract:",
+      "description": "Description"
+    },
+    "fallbackName": "Unknown token",
+    "fallbackAddress": "No address",
+    "fallbackSymbol": "N/A",
+    "fallbackMarketCap": "N/A",
+    "fallbackHolders": "N/A",
+    "fallbackReplies": "N/A",
+    "fallbackInsuranceStatus": "N/A",
+    "fallbackCreatedAt": "N/A",
+    "fallbackSigner": "Unknown"
+  }
+}
