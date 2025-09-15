@@ -77,7 +77,7 @@ export default async function Page() {
     prize_pool_sol: "",
     rich_text_content: "",
     start_at: "2025-09-20T00:00:00Z",
-    status: "coming soon",
+    status: "ongoing",
     top_redirect_url: "",
     uuid: "chefid-campaign-001"
   };

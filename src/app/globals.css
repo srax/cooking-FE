@@ -201,6 +201,30 @@ body,
   }
 }
 
+/* Diagonal scanlines background effect for ChefID campaign */
+.stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 141, 247, 0.08) 0 12px,
+    transparent 12px 24px
+  );
+  background-size: 200% 200%;
+  animation: pan 14s linear infinite;
+}
+
+@keyframes pan {
+  to {
+    background-position: 200% 200%;
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stripes {
+    animation: none !important;
+  }
+}
+
 /* 富文本内容样式 */
 .rich-text-content {
   @apply text-sm font-cofo text-[#9F9B9F] leading-normal;
