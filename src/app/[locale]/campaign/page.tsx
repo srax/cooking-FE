@@ -57,6 +57,34 @@ export default async function Page() {
     console.error("Error parsing competition data:", error);
   }
 
+  // Add the new ChefID campaign
+  const chefIdCampaign: Competition = {
+    allocation_1st: "",
+    allocation_2nd: "",
+    allocation_3rd: "",
+    allocation_4th: "",
+    allocation_5th: "",
+    allocation_6th_20th: "",
+    allocation_rest_method: "",
+    description: "",
+    end_at: "2025-11-20T23:59:59Z",
+    external_url: "",
+    header_banner_url: "",
+    is_self_calculate: false,
+    min_banner_url: "/images/campaign/campaign1.png",
+    name: "ChefID",
+    payout_end_date: "",
+    prize_pool_sol: "",
+    rich_text_content: "",
+    start_at: "2025-09-20T00:00:00Z",
+    status: "coming soon",
+    top_redirect_url: "",
+    uuid: "chefid-campaign-001"
+  };
+
+  // Add ChefID campaign to the beginning of the list
+  const allCampaigns = [chefIdCampaign, ...competitions];
+
   return (
     <div
       className="flex-col min-h-screen text-white bg-[rgba(19,5,17,1)] overflow-x-hidden"
@@ -74,21 +102,21 @@ export default async function Page() {
             "lg:grid-cols-3"
           )}
         >
-          {competitions.length > 0 ? (
-            competitions.map((competition) => (
+          {allCampaigns.length > 0 ? (
+            allCampaigns.map((campaign) => (
               <Card
-                key={competition.uuid}
-                name={competition.name}
-                imageUrl={competition.min_banner_url}
+                key={campaign.uuid}
+                name={campaign.name}
+                imageUrl={campaign.min_banner_url}
                 href={
-                  competition.status === "coming soon"
+                  campaign.status === "coming soon"
                     ? undefined
-                    : competition.external_url ||
-                      `/campaign/${competition.uuid}/`
+                    : campaign.external_url ||
+                      `/campaign/${campaign.uuid}/`
                 }
-                startTime={competition.start_at}
-                endTime={competition.end_at}
-                status={competition.status}
+                startTime={campaign.start_at}
+                endTime={campaign.end_at}
+                status={campaign.status}
               />
             ))
           ) : (
