@@ -82,6 +82,12 @@ const Header = () => {
     }
     onOpen();
   };
+
+  // Hide header on ChefID campaign page
+  if (pathname === '/campaign/chefid-campaign-001') {
+    return null;
+  }
+
   return (
     <>
       <div

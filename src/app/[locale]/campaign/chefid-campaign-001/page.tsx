@@ -29,8 +29,8 @@ export default function ChefIDCampaignPage() {
       role="main"
       style={{ overflow: 'hidden' }}
     >
-      {/* New Shard Background */}
-      <div className="shard-bg" />
+      {/* Spiral Background */}
+      <div className="absolute top-1/2 left-1/2 w-[1500px] sm:w-[2440px] h-[1500px] sm:h-[2440px] sunburst animate-spin opacity-50 -translate-x-1/2 -translate-y-1/2" />
       
       {/* Content with higher z-index - moved upwards */}
       <main className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 -mt-16">
