@@ -56,7 +56,16 @@ export default function ChefIDCampaignPage() {
             showcase your skills, and get rewarded!
           </p>
 
-          <div className="space-y-4 mb-12">
+          {/* Get Started Button */}
+          <div className="flex justify-center mb-12">
+            <Link href="/">
+              <FancyButton
+                buttonText="GET STARTED"
+              />
+            </Link>
+          </div>
+
+          <div className="space-y-4">
             <div className="flex items-center justify-center gap-4">
               <div className="w-2 h-2 bg-[#FCD845] rounded-full animate-pulse"></div>
               <span className="font-cofo text-[#FCD845]">Future token airdrops</span>
@@ -69,15 +78,6 @@ export default function ChefIDCampaignPage() {
               <div className="w-2 h-2 bg-[#1AE371] rounded-full animate-pulse"></div>
               <span className="font-cofo text-[#1AE371]">your complete trader portfolio</span>
             </div>
-          </div>
-
-          {/* Get Started Button */}
-          <div className="flex justify-center mt-12">
-            <Link href="/">
-              <FancyButton
-                buttonText="GET STARTED"
-              />
-            </Link>
           </div>
 
         </div>
