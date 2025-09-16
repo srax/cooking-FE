@@ -128,10 +128,10 @@ export default function ChefIDRewardsPage() {
             />
           </Tab>
           <Tab key="ChefID" title="CHEFID">
-            <div className="p-8 text-center">
-              <h2 className="text-2xl mb-4 text-[#FCD845]">ChefID Profile</h2>
-              <p className="text-[#9F9B9F]">ChefID features coming soon...</p>
-            </div>
+            <ChefIDTab />
+          </Tab>
+          <Tab key="PointsGuide" title="POINTS GUIDE">
+            <PointsGuideTab />
           </Tab>
         </Tabs>
       </div>
@@ -214,35 +214,105 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           </div>
         </div>
 
-        {/* Simplified Point Containers - Moved lower to make space */}
-        <div className="space-y-4 mt-12">
-          {/* Trading Points */}
-          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg">
-            <div className="flex justify-between items-center">
-              <span className="text-[14px] text-[#9F9B9F]">Trading volume on cooking</span>
-              <span className="text-[20px] text-[#FCD845] font-bold">
-                {loginState.isLoggedIn ? formatQuantity(userPoints.trade_points) : "-"} pts
+        {/* Point Containers in 2x2 Grid */}
+        <div className="grid grid-cols-2 gap-4 mt-12">
+          {/* Trading Volume */}
+          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
+            <div className="flex items-center justify-center gap-1 mb-2">
+              <span className="text-[14px] text-[#9F9B9F]">Volume</span>
+              <div 
+                className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
+                title="Points earned from your trading volume on the Cooking platform. Higher trading volume = more points."
+              >
+                !
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-1">
+              <span className="text-[18px] text-[#FCD845] font-bold">
+                {loginState.isLoggedIn ? formatQuantity(userPoints.trade_points) : "-"}
               </span>
+              <Image
+                src="/images/campaign/cookcoin.png"
+                alt="Cook Coin"
+                width={16}
+                height={16}
+                className="flex-shrink-0"
+              />
             </div>
           </div>
 
-          {/* Referral Points */}
-          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg">
-            <div className="flex justify-between items-center">
-              <span className="text-[14px] text-[#9F9B9F]">Top community member points</span>
-              <span className="text-[20px] text-[#FCD845] font-bold">
-                {loginState.isLoggedIn ? formatQuantity(userPoints.invite_points) : "-"} pts
+          {/* Community Points */}
+          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
+            <div className="flex items-center justify-center gap-1 mb-2">
+              <span className="text-[14px] text-[#9F9B9F]">Community</span>
+              <div 
+                className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
+                title="Points earned by inviting friends and building your network. Invite friends to earn points and get bonuses for active referrals."
+              >
+                !
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-1">
+              <span className="text-[18px] text-[#FCD845] font-bold">
+                {loginState.isLoggedIn ? formatQuantity(userPoints.invite_points) : "-"}
               </span>
+              <Image
+                src="/images/campaign/cookcoin.png"
+                alt="Cook Coin"
+                width={16}
+                height={16}
+                className="flex-shrink-0"
+              />
             </div>
           </div>
 
-          {/* Quest Points */}
-          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg">
-            <div className="flex justify-between items-center">
-              <span className="text-[14px] text-[#9F9B9F]">Chef quest completion rewards</span>
-              <span className="text-[20px] text-[#FCD845] font-bold">
-                {loginState.isLoggedIn ? formatQuantity(userPoints.task_points) : "-"} pts
+          {/* Task Points */}
+          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
+            <div className="flex items-center justify-center gap-1 mb-2">
+              <span className="text-[14px] text-[#9F9B9F]">Tasks</span>
+              <div 
+                className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
+                title="Points earned by completing daily and weekly tasks. Includes daily login rewards, social media tasks, and special event tasks."
+              >
+                !
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-1">
+              <span className="text-[18px] text-[#FCD845] font-bold">
+                {loginState.isLoggedIn ? formatQuantity(userPoints.task_points) : "-"}
               </span>
+              <Image
+                src="/images/campaign/cookcoin.png"
+                alt="Cook Coin"
+                width={16}
+                height={16}
+                className="flex-shrink-0"
+              />
+            </div>
+          </div>
+
+          {/* FNF Calls Points */}
+          <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
+            <div className="flex items-center justify-center gap-1 mb-2">
+              <span className="text-[14px] text-[#9F9B9F]">FNF calls</span>
+              <div 
+                className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
+                title="Premium points for successful FNF (Friday Night Funkin') calls and trading predictions. Includes call accuracy rewards and community recognition."
+              >
+                !
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-1">
+              <span className="text-[18px] text-[#FCD845] font-bold">
+                {loginState.isLoggedIn ? formatQuantity(userPoints.michelin_points) : "-"}
+              </span>
+              <Image
+                src="/images/campaign/cookcoin.png"
+                alt="Cook Coin"
+                width={16}
+                height={16}
+                className="flex-shrink-0"
+              />
             </div>
           </div>
         </div>
@@ -257,6 +327,172 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
 interface ChefRightPanelProps {
   top50Data: { address: string; total_points: number }[];
   loginState: { isConnected: boolean; isLoggedIn: boolean };
+}
+
+function ChefIDTab() {
+  const [completedTasks, setCompletedTasks] = useState<Set<number>>(new Set());
+
+  const handleTaskComplete = (taskId: number) => {
+    setCompletedTasks(prev => new Set(prev).add(taskId));
+    addToast({
+      title: "Task Completed!",
+      description: "You earned bonus points with multiplier!",
+      color: "success",
+    });
+  };
+
+  const tasks = [
+    {
+      id: 1,
+      title: "First mission: Follow us on X",
+      description: "Hit follow — and stay tuned for the next tasks and leaderboard drops.",
+      buttonText: "Follow us on X",
+      icon: "X",
+      multiplier: "2x",
+    },
+    {
+      id: 2,
+      title: "Second mission: Add friend via your referral link",
+      description: "Share your referral link and invite friends to join the community.",
+      buttonText: "Invite your friends",
+      icon: "👥",
+      multiplier: "1.5x",
+      hasReferralLink: true,
+    },
+    {
+      id: 4,
+      title: "Retweet our thread in X",
+      description: "Let's make it viral all together. More retweets — more Projects with pools.",
+      buttonText: "Retweet our thread",
+      icon: "X",
+      multiplier: "3x",
+    },
+  ];
+
+  return (
+    <div className="p-8">
+      {/* Coming Soon Section */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl mb-4 text-[#FCD845]">ChefID Profile</h2>
+        <p className="text-[#9F9B9F]">ChefID features coming soon...</p>
+      </div>
+
+      {/* Horizontal Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-[#FF8DF7]/30 to-transparent mb-8"></div>
+
+      {/* Tasks Section */}
+      <div className="max-w-4xl mx-auto">
+        <h3 className="text-xl text-[#FCD845] mb-6 text-center">Complete Tasks for Bonus Points</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {tasks.map((task) => (
+            <div
+              key={task.id}
+              className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg relative"
+            >
+              {/* Multiplier Badge */}
+              <div className="absolute -top-3 -right-3 bg-[#FCD845] text-black px-2 py-1 rounded-full text-xs font-bold">
+                {task.multiplier}
+              </div>
+
+              <div className="mb-4">
+                <h4 className="text-lg text-[#FF8DF7] mb-2 font-bold">{task.title}</h4>
+                <p className="text-[#9F9B9F] text-sm mb-4">{task.description}</p>
+              </div>
+
+              {/* Referral Link Input */}
+              {task.hasReferralLink && (
+                <div className="mb-4">
+                  <div className="flex items-center bg-[#0A0A0A] border border-[#FF8DF7]/20 rounded p-2">
+                    <input
+                      type="text"
+                      value="https://cooking.city/chef?ref=chef123"
+                      readOnly
+                      className="bg-transparent text-[#9F9B9F] text-xs flex-1 outline-none"
+                    />
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText("https://cooking.city/chef?ref=chef123");
+                        addToast({
+                          title: "Copied!",
+                          description: "Referral link copied to clipboard",
+                          color: "success",
+                        });
+                      }}
+                      className="ml-2 w-6 h-6 bg-[#FF8DF7] rounded flex items-center justify-center text-white text-xs hover:bg-[#FF8DF7]/80 transition-colors"
+                    >
+                      📋
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Action Button */}
+              <button
+                onClick={() => handleTaskComplete(task.id)}
+                disabled={completedTasks.has(task.id)}
+                className={`w-full py-3 px-4 rounded-lg font-bold text-sm transition-all ${
+                  completedTasks.has(task.id)
+                    ? "bg-[#FF8DF7]/20 text-[#FF8DF7] cursor-not-allowed"
+                    : "bg-[#FF8DF7] text-white hover:bg-[#FF8DF7]/80"
+                }`}
+              >
+                {completedTasks.has(task.id) ? "✓ Completed" : task.buttonText}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PointsGuideTab() {
+  return (
+    <div className="p-8">
+      <h2 className="text-2xl mb-6 text-[#FCD845] text-center">Points Guide</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
+          <h3 className="text-xl text-[#FF8DF7] mb-4">Volume Points</h3>
+          <p className="text-[#9F9B9F] mb-3">Earn points based on your trading volume on the Cooking platform.</p>
+          <ul className="text-[#FFFFFF] text-sm space-y-1">
+            <li>• Higher trading volume = more points</li>
+            <li>• Updated daily at 00:00 UTC</li>
+            <li>• Includes all token trades</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
+          <h3 className="text-xl text-[#FF8DF7] mb-4">Community Points</h3>
+          <p className="text-[#9F9B9F] mb-3">Earn points by inviting friends and building your network.</p>
+          <ul className="text-[#FFFFFF] text-sm space-y-1">
+            <li>• Invite friends to earn points</li>
+            <li>• Bonus for active referrals</li>
+            <li>• Community engagement rewards</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
+          <h3 className="text-xl text-[#FF8DF7] mb-4">Task Points</h3>
+          <p className="text-[#9F9B9F] mb-3">Complete daily and weekly tasks to earn bonus points.</p>
+          <ul className="text-[#FFFFFF] text-sm space-y-1">
+            <li>• Daily login rewards</li>
+            <li>• Social media tasks</li>
+            <li>• Special event tasks</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
+          <h3 className="text-xl text-[#FF8DF7] mb-4">FNF Calls Points</h3>
+          <p className="text-[#9F9B9F] mb-3">Premium points for successful FNF calls and trading predictions.</p>
+          <ul className="text-[#FFFFFF] text-sm space-y-1">
+            <li>• Successful call predictions</li>
+            <li>• Trading accuracy rewards</li>
+            <li>• Community recognition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function ChefRightPanel({
@@ -286,7 +522,7 @@ function ChefRightPanel({
     <div className="w-full pl-10 max-sm:p-0">
       <div className="w-full relative flex flex-col items-start justify-start md:pt-5 md:pb-2.5 pl-0 md:pr-10 box-border text-left text-white">
         {/* Expanded Top 50 Leaderboard */}
-        <div className="w-full bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6">
+        <div className="w-full bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-xl">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-[24px] font-bold">
               <span className="text-[#FF8DF7]">Chef</span> Leaderboard
@@ -324,15 +560,15 @@ function ChefRightPanel({
             </div>
           </div>
 
-          <div>
-            <div className="grid gap-1 p-3 bg-[#2A1F28] rounded-t-lg items-center" style={{gridTemplateColumns: "80px 1fr 180px 120px"}}>
+          <div className="rounded-lg overflow-hidden">
+            <div className="grid gap-1 p-3 bg-[#2A1F28] items-center" style={{gridTemplateColumns: "80px 1fr 180px 120px"}}>
               <p className="font-cofo text-sm text-[#FCD845] font-bold">Rank</p>
               <p className="font-cofo text-sm text-[#FCD845] font-bold">User</p>
               <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{marginRight: "60px"}}>Tier</p>
               <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{marginRight: "24px"}}>Points</p>
             </div>
 
-            <div className="space-y-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
+            <div className="space-y-1 max-h-[70vh] overflow-y-auto custom-scrollbar bg-[#1A1A1A] rounded-b-lg">
               {currentItems.length > 0 ? (
                 currentItems.map((item, index) => {
                   const rank = indexOfFirstItem + index + 1;
@@ -353,7 +589,7 @@ function ChefRightPanel({
                   return (
                     <div
                       key={index}
-                      className="grid gap-1 p-4 bg-[#1A1A1A] hover:bg-[#2A1F28] transition-colors border-b border-[#332231] items-center"
+                      className="grid gap-1 p-4 hover:bg-[#2A1F28] transition-colors items-center"
                       style={{gridTemplateColumns: "80px 1fr 180px 120px"}}
                     >
                       <div>
@@ -361,17 +597,22 @@ function ChefRightPanel({
                           #{rank.toString().padStart(2, "0")}
                         </span>
                       </div>
-                      <div className="flex flex-col">
-                        <span className="text-[14px] text-[#FFFFFF] mb-1">
-                          @{twitterHandle}
-                        </span>
-                        <span 
-                          className="text-[12px] text-[#9F9B9F] font-mono cursor-pointer hover:text-[#FCD845] transition-colors"
-                          onClick={handleCopyWallet}
-                          title="Click to copy full address"
-                        >
-                          {walletAddress}
-                        </span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                          {twitterHandle.slice(0, 2).toUpperCase()}
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[14px] text-[#FFFFFF] mb-1">
+                            @{twitterHandle}
+                          </span>
+                          <span 
+                            className="text-[12px] text-[#9F9B9F] font-mono cursor-pointer hover:text-[#FCD845] transition-colors"
+                            onClick={handleCopyWallet}
+                            title="Click to copy full address"
+                          >
+                            {walletAddress}
+                          </span>
+                        </div>
                       </div>
                       <div className="text-right">
                         <span className="text-[14px] text-[#FFFFFF]">
