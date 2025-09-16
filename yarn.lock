@@ -1556,6 +1556,11 @@
   dependencies:
     "@lit-labs/ssr-dom-shim" "^1.2.0"
 
+"@lottiefiles/dotlottie-web@^0.51.2":
+  version "0.51.2"
+  resolved "https://registry.npmjs.org/@lottiefiles/dotlottie-web/-/dotlottie-web-0.51.2.tgz"
+  integrity sha512-X5HEOoov9P/WlvQkVQ/0RO0UJRUIpG3JZOX+RH/A2h2snbCux/MobO6YodAF0lVk1Rky/h9f1om/xmivBVMlfQ==
+
 "@metaplex-foundation/mpl-token-metadata@^3.4.0":
   version "3.4.0"
   resolved "https://registry.npmjs.org/@metaplex-foundation/mpl-token-metadata/-/mpl-token-metadata-3.4.0.tgz"

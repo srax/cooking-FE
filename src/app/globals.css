@@ -58,6 +58,77 @@ body {
   min-height: 100vh;
 }
 
+/* BACKUP: Original spiral effect (can revert by uncommenting)
+.sunburst-original {
+  background: repeating-conic-gradient(
+    from 0deg,
+    #170f16 0deg 10deg,
+    transparent 10deg 20deg
+  );
+}
+.animate-spin-original {
+  animation: rotate 30s linear infinite;
+  will-change: transform;
+}
+*/
+
+/* Cooking City "Shard" background - OPTIMIZED */
+.shard-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: #2a1230;  /* Simplified solid background */
+  z-index: 0;
+}
+
+/* Ultra-long angular wedges - no visible edges */
+.shard-bg::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  width: 400vw;
+  height: 400vh;
+  background:
+    conic-gradient(from 0deg at 50% 50%,
+      transparent 0deg 15deg,   
+      #5a1352 15deg 30deg,
+      transparent 30deg 45deg, 
+      #9b1b7f 45deg 60deg,
+      transparent 60deg 75deg,
+      #5a1352 75deg 90deg,
+      transparent 90deg 105deg,
+      #9b1b7f 105deg 120deg,
+      transparent 120deg 135deg,
+      #5a1352 135deg 150deg,
+      transparent 150deg 165deg,
+      #9b1b7f 165deg 180deg,
+      transparent 180deg 195deg,
+      #5a1352 195deg 210deg,
+      transparent 210deg 225deg,
+      #9b1b7f 225deg 240deg,
+      transparent 240deg 255deg,
+      #5a1352 255deg 270deg,
+      transparent 270deg 285deg,
+      #9b1b7f 285deg 300deg,
+      transparent 300deg 315deg,
+      #5a1352 315deg 330deg,
+      transparent 330deg 345deg,
+      #9b1b7f 345deg 360deg);
+  opacity: 0.4;
+  animation: shard-rotate 20L
+  s linear infinite;
+  will-change: transform;
+}
+
+/* Removed dotted overlay - was causing performance issues */
+
+/* Simple, smooth rotation for shard background */
+@keyframes shard-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 @keyframes rotate {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -431,4 +502,29 @@ body,
 
 .rich-text-content blockquote {
   @apply border-l-4 border-[#332231] pl-4 italic;
+}
+
+/* Custom Yellow Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #FCD845 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #FCD845;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FFE066;
+  width: 6px;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import FancyButton from "@/components/FancyButton";
 import { useEffect } from "react";
 
@@ -25,16 +25,15 @@ export default function ChefIDCampaignPage() {
 
   return (
     <div
-      className="flex-col fixed inset-0 w-full h-full text-white bg-[#332231] overflow-hidden"
+      className="relative min-h-screen text-white"
       role="main"
       style={{ overflow: 'hidden' }}
     >
-      {/* Full-screen spiral background effect */}
-      {/* Spiral sunburst background - full screen coverage */}
-      <div className="absolute top-1/2 left-1/2 w-[3000px] h-[3000px] sunburst animate-spin opacity-50" style={{ transform: 'translate(-50%, -50%)' }} />
+      {/* New Shard Background */}
+      <div className="shard-bg" />
       
-      {/* Content with higher z-index - centered on full screen */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full px-4">
+      {/* Content with higher z-index - moved upwards */}
+      <main className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 -mt-16">
         <div className="text-center max-w-2xl mx-auto">
           {/* Logo */}
           <div className="flex justify-center mb-5">
@@ -58,7 +57,7 @@ export default function ChefIDCampaignPage() {
 
           {/* Get Started Button */}
           <div className="flex justify-center mb-12">
-            <Link href="/">
+            <Link href="/chefid-rewards">
               <FancyButton
                 buttonText="GET STARTED"
               />
@@ -81,10 +80,10 @@ export default function ChefIDCampaignPage() {
           </div>
 
         </div>
-      </div>
+      </main>
 
       {/* Chat1 Character - Bottom Right */}
-      <div className="absolute z-10" style={{ bottom: '-120px', right: '640px', width: '800px', height: '800px' }}>
+      <div className="absolute z-5" style={{ bottom: '-120px', right: '640px', width: '800px', height: '800px' }}>
         <img
           src="/images/campaign/chat1.png"
           alt="Chat Character"
@@ -98,7 +97,7 @@ export default function ChefIDCampaignPage() {
       </div>
 
       {/* Chat2 Character - Bottom Left (mirrored position) */}
-      <div className="absolute z-10" style={{ bottom: '-160px', left: '720px', width: '800px', height: '800px' }}>
+      <div className="absolute z-5" style={{ bottom: '-160px', left: '720px', width: '800px', height: '800px' }}>
         <img
           src="/images/campaign/chat2.png"
           alt="Chat Character 2"
