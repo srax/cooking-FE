@@ -55,11 +55,33 @@ export default async function Page({
   }));
   console.log(event, "event");
 
+  const normalizedName = event?.name
+    ?.toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9]/g, "");
+  const isChefId = Boolean(normalizedName?.includes("chefid"));
+  const isDownBad = Boolean(
+    normalizedName?.includes("downbadhalloffame") ||
+      normalizedName?.includes("downbad")
+  );
+  const visualVariant: "aurora" = "aurora";
+
   return (
     <div
-      className="flex-col min-h-screen text-white bg-[rgba(19,5,17,1)] overflow-hidden"
+      className="relative z-10 flex-col min-h-screen text-white bg-[rgba(19,5,17,1)] overflow-hidden"
       role="main"
     >
+      {isChefId && !isDownBad ? (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 hero-gradient-chefid" />
+          <div className="aurora">
+            <div className="aurora-blob aurora-blob--cyan" />
+            <div className="aurora-blob aurora-blob--violet" />
+            <div className="aurora-blob aurora-blob--gold" />
+          </div>
+          <div className="absolute inset-0 vignette" />
+        </div>
+      ) : null}
       <Header
         competitionName={event.name}
         startTime={event.start_at}

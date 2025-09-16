@@ -25,45 +25,16 @@ export default function ChefIDCampaignPage() {
 
   return (
     <div
-      className="flex-col min-h-screen text-white bg-[rgba(19,5,17,1)] overflow-hidden"
+      className="flex-col fixed inset-0 w-full h-full text-white bg-[#332231] overflow-hidden"
       role="main"
       style={{ overflow: 'hidden' }}
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* Diagonal scanlines background */}
-        <div className="absolute inset-0 stripes opacity-50" />
-
-        {/* Blurred glow effect */}
-        <svg
-          className="absolute inset-0"
-          width="100%"
-          height="100%"
-          viewBox="0 0 1311 374"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <filter
-              id="chefid-blur"
-              x="-50%"
-              y="-50%"
-              width="200%"
-              height="200%"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feGaussianBlur stdDeviation="50" />
-            </filter>
-          </defs>
-          <g filter="url(#chefid-blur)">
-            <ellipse cx="655.5" cy="187" rx="555.5" ry="87" fill="#FCD845" fillOpacity="0.3" />
-          </g>
-        </svg>
-      </div>
-
-
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 pt-8">
+      {/* Full-screen spiral background effect */}
+      {/* Spiral sunburst background - full screen coverage */}
+      <div className="absolute top-1/2 left-1/2 w-[3000px] h-[3000px] sunburst animate-spin opacity-50" style={{ transform: 'translate(-50%, -50%)' }} />
+      
+      {/* Content with higher z-index - centered on full screen */}
+      <div className="relative z-20 flex flex-col items-center justify-center h-full px-4">
         <div className="text-center max-w-2xl mx-auto">
           {/* Logo */}
           <div className="flex justify-center mb-5">
@@ -113,7 +84,7 @@ export default function ChefIDCampaignPage() {
       </div>
 
       {/* Chat1 Character - Bottom Right */}
-      <div className="absolute z-0" style={{ bottom: '-120px', right: '640px', width: '800px', height: '800px' }}>
+      <div className="absolute z-10" style={{ bottom: '-120px', right: '640px', width: '800px', height: '800px' }}>
         <img
           src="/images/campaign/chat1.png"
           alt="Chat Character"
@@ -127,7 +98,7 @@ export default function ChefIDCampaignPage() {
       </div>
 
       {/* Chat2 Character - Bottom Left (mirrored position) */}
-      <div className="absolute z-0" style={{ bottom: '-160px', left: '720px', width: '800px', height: '800px' }}>
+      <div className="absolute z-10" style={{ bottom: '-160px', left: '720px', width: '800px', height: '800px' }}>
         <img
           src="/images/campaign/chat2.png"
           alt="Chat Character 2"

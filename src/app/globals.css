@@ -225,6 +225,138 @@ body,
   }
 }
 
+/* === ChefID distinct hero background toolkit === */
+/* Alternate spiral effect with cooler palette */
+.spiral-alt {
+  background-image:
+    radial-gradient(circle at center, rgba(91, 187, 255, 0.10), transparent 62%),
+    radial-gradient(circle at center, rgba(81, 249, 191, 0.06), transparent 70%),
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(91, 187, 255, 0.26) 0deg 3deg,
+      transparent 3deg 7deg,
+      rgba(131, 99, 247, 0.22) 7deg 11deg,
+      transparent 11deg 17deg
+    );
+}
+
+/* Secondary parallax layer */
+.spiral-alt-2 {
+  background-image:
+    radial-gradient(circle at center, rgba(131, 99, 247, 0.06), transparent 60%),
+    repeating-conic-gradient(
+      from 15deg,
+      rgba(81, 249, 191, 0.18) 0deg 4deg,
+      transparent 4deg 10deg
+    );
+}
+
+/* Different spin speeds and direction for parallax */
+.spin-slower { animation: rotate 60s linear infinite; }
+.spin-reverse { animation: rotate 30s linear infinite reverse; }
+
+/* Downbad-style hero panel container */
+.hero-panel {
+  background: #332231; /* tinted panel */
+  border: 2px solid #000; /* strong edge */
+  border-radius: 0.5rem; /* rounded corners */
+}
+
+/* Soft edge darkening to make center pop */
+.vignette {
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.35) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* Gradient underlay for ChefID hero */
+.hero-gradient-chefid {
+  background: radial-gradient(
+      60% 80% at 50% 50%,
+      rgba(62, 24, 92, 0.75) 0%,
+      rgba(19, 5, 17, 0.5) 40%,
+      rgba(19, 5, 17, 0) 70%
+    ),
+    radial-gradient(
+      120% 120% at 50% -10%,
+      rgba(48, 9, 121, 0.35) 0%,
+      rgba(19, 5, 17, 0) 60%
+    );
+}
+
+/* Aurora/Nebula gradient background */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70vmax;
+  height: 70vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.aurora-blob--cyan {
+  background: radial-gradient(circle at center, rgba(91, 187, 255, 0.9) 0%, rgba(91, 187, 255, 0) 60%);
+  animation: auroraMove1 18s ease-in-out infinite alternate;
+}
+
+.aurora-blob--violet {
+  background: radial-gradient(circle at center, rgba(131, 99, 247, 0.85) 0%, rgba(131, 99, 247, 0) 60%);
+  animation: auroraMove2 22s ease-in-out infinite alternate;
+}
+
+.aurora-blob--gold {
+  background: radial-gradient(circle at center, rgba(252, 216, 69, 0.65) 0%, rgba(252, 216, 69, 0) 60%);
+  animation: auroraMove3 26s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove1 {
+  0% { transform: translate(-60%, -55%) scale(0.9); }
+  50% { transform: translate(-40%, -60%) scale(1.05); }
+  100% { transform: translate(-50%, -40%) scale(0.95); }
+}
+
+@keyframes auroraMove2 {
+  0% { transform: translate(-45%, -65%) scale(1.0); }
+  50% { transform: translate(-55%, -45%) scale(1.12); }
+  100% { transform: translate(-48%, -58%) scale(1.0); }
+}
+
+@keyframes auroraMove3 {
+  0% { transform: translate(-52%, -48%) scale(0.95); }
+  50% { transform: translate(-42%, -52%) scale(1.08); }
+  100% { transform: translate(-58%, -50%) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none !important;
+  }
+}
+
+/* Fine dot texture for subtle grain */
+.texture-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+
 /* 富文本内容样式 */
 .rich-text-content {
   @apply text-sm font-cofo text-[#9F9B9F] leading-normal;
