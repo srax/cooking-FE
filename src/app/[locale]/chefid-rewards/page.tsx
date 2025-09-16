@@ -280,8 +280,8 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           {/* Task Points */}
           <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
             <div className="flex items-center justify-center gap-1 mb-2">
-              <span className="text-[14px] text-[#9F9B9F]">Tasks</span>
-              <div
+              <span className="text-[14px] text-[#9F9B9F]">Trader Stats</span>
+              <div 
                 className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
                 title="Points earned by completing daily and weekly tasks. Includes daily login rewards, social media tasks, and special event tasks."
               >
@@ -393,26 +393,26 @@ function ChefIDTab() {
 
       {/* Tasks Section */}
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-xl text-[#FCD845] mb-6 text-center">Complete Tasks for Bonus Points</h3>
+        <h3 className="text-xl text-[#FCD845] mb-6 text-center">Complete Tasks for Bonus Points!</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {tasks.map((task) => (
             <div
               key={task.id}
-              className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg relative"
+              className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg relative"
             >
               {/* Multiplier Badge */}
               <div className="absolute -top-3 -right-3 bg-[#FCD845] text-black px-2 py-1 rounded-full text-xs font-bold">
                 {task.multiplier}
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3">
                 <h4 className="text-lg text-[#FF8DF7] mb-2 font-bold">{task.title}</h4>
-                <p className="text-[#9F9B9F] text-sm mb-4">{task.description}</p>
+                <p className="text-[#9F9B9F] text-sm mb-3">{task.description}</p>
               </div>
 
               {/* Referral Link Input */}
               {task.hasReferralLink && (
-                <div className="mb-4">
+                <div className="mb-3">
                   <div className="flex items-center bg-[#0A0A0A] border border-[#FF8DF7]/20 rounded p-2">
                     <input
                       type="text"
@@ -441,10 +441,11 @@ function ChefIDTab() {
               <button
                 onClick={() => handleTaskComplete(task.id)}
                 disabled={completedTasks.has(task.id)}
-                className={`w-full py-3 px-4 rounded-lg font-bold text-sm transition-all ${completedTasks.has(task.id)
-                    ? "bg-[#FF8DF7]/20 text-[#FF8DF7] cursor-not-allowed"
-                    : "bg-[#FF8DF7] text-white hover:bg-[#FF8DF7]/80"
-                  }`}
+                className={`w-full py-2 px-4 rounded-lg font-bold text-sm transition-all ${
+                  completedTasks.has(task.id)
+                    ? "bg-[#E878EB]/20 text-[#E878EB] cursor-not-allowed"
+                    : "bg-[#E878EB] text-white hover:bg-[#E878EB]/80"
+                }`}
               >
                 {completedTasks.has(task.id) ? "✓ Completed" : task.buttonText}
               </button>
