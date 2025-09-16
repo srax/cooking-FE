@@ -10,6 +10,7 @@ import ProgressBar from "@/components/ProgressBar";
 import { useAuth } from "@/context/AuthContext";
 import { formatQuantity } from "@/utils";
 import hamburger from "@/components/lottie/hamburger.json";
+import SocialCard from "@/components/SocialCard";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -36,7 +37,7 @@ interface MockWalletVolume {
 export default function ChefIDRewardsPage() {
   const { isLoggedIn, isConnected, userInfo, signAndLogin } = useAuth();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [selectedTab, setSelectedTab] = useState<string>("Leaderboard");
+  const [selectedTab, setSelectedTab] = useState<string>("socialCard");
 
   // Mock data - in real implementation, these would come from API calls
   const [mockUserPoints, setMockUserPoints] = useState<MockUserPoints>({
@@ -117,6 +118,9 @@ export default function ChefIDRewardsPage() {
           selectedKey={selectedTab}
           onSelectionChange={(key) => setSelectedTab(key as string)}
         >
+           <Tab key="socialCard" title="Social Card">
+            <SocialCardContainer />
+          </Tab>
           <Tab className="w-full" key="Leaderboard" title="LEADERBOARD">
             <ChefPointsTab
               userPoints={mockUserPoints}
@@ -133,12 +137,19 @@ export default function ChefIDRewardsPage() {
           <Tab key="PointsGuide" title="POINTS GUIDE">
             <PointsGuideTab />
           </Tab>
+         
         </Tabs>
       </div>
     </div>
   );
 }
 
+
+const SocialCardContainer = () => {
+  return <div className="mt-16">
+    <SocialCard />
+  </div>
+}
 interface ChefPointsTabProps {
   userPoints: MockUserPoints;
   userTasks: MockUserTasks;
@@ -220,7 +231,7 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
             <div className="flex items-center justify-center gap-1 mb-2">
               <span className="text-[14px] text-[#9F9B9F]">Volume</span>
-              <div 
+              <div
                 className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
                 title="Points earned from your trading volume on the Cooking platform. Higher trading volume = more points."
               >
@@ -245,7 +256,7 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
             <div className="flex items-center justify-center gap-1 mb-2">
               <span className="text-[14px] text-[#9F9B9F]">Community</span>
-              <div 
+              <div
                 className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
                 title="Points earned by inviting friends and building your network. Invite friends to earn points and get bonuses for active referrals."
               >
@@ -270,7 +281,7 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
             <div className="flex items-center justify-center gap-1 mb-2">
               <span className="text-[14px] text-[#9F9B9F]">Tasks</span>
-              <div 
+              <div
                 className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
                 title="Points earned by completing daily and weekly tasks. Includes daily login rewards, social media tasks, and special event tasks."
               >
@@ -295,7 +306,7 @@ function ChefLeftPanel({ userPoints, loginState }: ChefLeftPanelProps) {
           <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-4 rounded-lg text-center">
             <div className="flex items-center justify-center gap-1 mb-2">
               <span className="text-[14px] text-[#9F9B9F]">FNF calls</span>
-              <div 
+              <div
                 className="w-4 h-4 rounded-full border border-[#FCD845] flex items-center justify-center text-[#FCD845] text-xs font-bold cursor-help bg-transparent"
                 title="Premium points for successful FNF (Friday Night Funkin') calls and trading predictions. Includes call accuracy rewards and community recognition."
               >
@@ -430,11 +441,10 @@ function ChefIDTab() {
               <button
                 onClick={() => handleTaskComplete(task.id)}
                 disabled={completedTasks.has(task.id)}
-                className={`w-full py-3 px-4 rounded-lg font-bold text-sm transition-all ${
-                  completedTasks.has(task.id)
+                className={`w-full py-3 px-4 rounded-lg font-bold text-sm transition-all ${completedTasks.has(task.id)
                     ? "bg-[#FF8DF7]/20 text-[#FF8DF7] cursor-not-allowed"
                     : "bg-[#FF8DF7] text-white hover:bg-[#FF8DF7]/80"
-                }`}
+                  }`}
               >
                 {completedTasks.has(task.id) ? "✓ Completed" : task.buttonText}
               </button>
@@ -460,7 +470,7 @@ function PointsGuideTab() {
             <li>• Includes all token trades</li>
           </ul>
         </div>
-        
+
         <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
           <h3 className="text-xl text-[#FF8DF7] mb-4">Community Points</h3>
           <p className="text-[#9F9B9F] mb-3">Earn points by inviting friends and building your network.</p>
@@ -470,7 +480,7 @@ function PointsGuideTab() {
             <li>• Community engagement rewards</li>
           </ul>
         </div>
-        
+
         <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
           <h3 className="text-xl text-[#FF8DF7] mb-4">Task Points</h3>
           <p className="text-[#9F9B9F] mb-3">Complete daily and weekly tasks to earn bonus points.</p>
@@ -480,7 +490,7 @@ function PointsGuideTab() {
             <li>• Special event tasks</li>
           </ul>
         </div>
-        
+
         <div className="bg-[#1D131B] border-[1px] border-[#FF8DF7]/20 p-6 rounded-lg">
           <h3 className="text-xl text-[#FF8DF7] mb-4">FNF Calls Points</h3>
           <p className="text-[#9F9B9F] mb-3">Premium points for successful FNF calls and trading predictions.</p>
@@ -529,9 +539,8 @@ function ChefRightPanel({
             </h2>
             <div className="flex items-center justify-between w-[100px]">
               <div
-                className={`w-8 h-8 border-[1px] border-[#FF8DF7]/20 flex items-center justify-center cursor-pointer rounded ${
-                  currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#FF8DF7]/10"
-                }`}
+                className={`w-8 h-8 border-[1px] border-[#FF8DF7]/20 flex items-center justify-center cursor-pointer rounded ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#FF8DF7]/10"
+                  }`}
                 onClick={handlePrevPage}
               >
                 <Image
@@ -543,11 +552,10 @@ function ChefRightPanel({
               </div>
               <div className="font-cofo text-[16px] min-w-[20px] text-center">{currentPage}</div>
               <div
-                className={`w-8 h-8 border-[1px] border-[#FF8DF7]/20 flex items-center justify-center cursor-pointer rounded ${
-                  currentPage === totalPages
+                className={`w-8 h-8 border-[1px] border-[#FF8DF7]/20 flex items-center justify-center cursor-pointer rounded ${currentPage === totalPages
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-[#FF8DF7]/10"
-                }`}
+                  }`}
                 onClick={handleNextPage}
               >
                 <Image
@@ -561,11 +569,11 @@ function ChefRightPanel({
           </div>
 
           <div className="rounded-lg overflow-hidden">
-            <div className="grid gap-1 p-3 bg-[#2A1F28] items-center" style={{gridTemplateColumns: "80px 1fr 180px 120px"}}>
+            <div className="grid gap-1 p-3 bg-[#2A1F28] items-center" style={{ gridTemplateColumns: "80px 1fr 180px 120px" }}>
               <p className="font-cofo text-sm text-[#FCD845] font-bold">Rank</p>
               <p className="font-cofo text-sm text-[#FCD845] font-bold">User</p>
-              <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{marginRight: "60px"}}>Tier</p>
-              <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{marginRight: "24px"}}>Points</p>
+              <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{ marginRight: "60px" }}>Tier</p>
+              <p className="font-cofo text-sm text-[#FCD845] font-bold text-right" style={{ marginRight: "24px" }}>Points</p>
             </div>
 
             <div className="space-y-1 max-h-[70vh] overflow-y-auto custom-scrollbar bg-[#1A1A1A] rounded-b-lg">
@@ -576,7 +584,7 @@ function ChefRightPanel({
                   const twitterHandle = twitterHandles[rank - 1] || `user${rank}`;
                   const tier = rank === 1 ? "Head Chef" : rank <= 3 ? "Cooking Champion" : rank <= 10 ? "Senior Cook" : "Cook";
                   const walletAddress = `${item.address.slice(0, 6)}..`;
-                  
+
                   const handleCopyWallet = () => {
                     navigator.clipboard.writeText(item.address);
                     addToast({
@@ -585,12 +593,12 @@ function ChefRightPanel({
                       color: "success",
                     });
                   };
-                  
+
                   return (
                     <div
                       key={index}
                       className="grid gap-1 p-4 hover:bg-[#2A1F28] transition-colors items-center"
-                      style={{gridTemplateColumns: "80px 1fr 180px 120px"}}
+                      style={{ gridTemplateColumns: "80px 1fr 180px 120px" }}
                     >
                       <div>
                         <span className="text-[#FCD845] text-[16px] font-bold">
@@ -605,7 +613,7 @@ function ChefRightPanel({
                           <span className="text-[14px] text-[#FFFFFF] mb-1">
                             @{twitterHandle}
                           </span>
-                          <span 
+                          <span
                             className="text-[12px] text-[#9F9B9F] font-mono cursor-pointer hover:text-[#FCD845] transition-colors"
                             onClick={handleCopyWallet}
                             title="Click to copy full address"
